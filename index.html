@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Récompense exceptionnelle</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #07111f, #102d4d);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 92%;
+    max-width: 480px;
+    background: rgba(255,255,255,0.08);
+    padding: 28px;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 48px;
+    margin-bottom: 5px;
+}
+
+h1 {
+    color: #ffd43b;
+    font-size: 28px;
+}
+
+.amount {
+    font-size: 42px;
+    font-weight: bold;
+    color: #42ff91;
+    margin: 20px 0;
+}
+
+p {
+    line-height: 1.6;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #ffd43b;
+    color: #111;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+#revelation {
+    display: none;
+}
+
+.warning {
+    color: #ff5757;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.details {
+    text-align: left;
+    background: rgba(0,0,0,0.25);
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 13px;
+    opacity: 0.75;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="accueil">
+
+    <div class="logo">🎁</div>
+
+    <h1>FÉLICITATIONS !</h1>
+
+    <p>
+        Vous avez été sélectionné(e) pour participer
+        à notre opération spéciale.
+    </p>
+
+    <div class="amount">100 000 FCFA</div>
+
+    <p>
+        Une récompense exceptionnelle vous attend.
+        Cliquez ci-dessous pour découvrir votre récompense.
+    </p>
+
+    <button onclick="reveler()">
+        🎁 RÉCLAMER MA RÉCOMPENSE
+    </button>
+
+    <div class="footer">
+        Créateur : <strong>Moné</strong><br>
+        Collaboration avec <strong>Artisans du Code</strong>
+    </div>
+
+</div>
+
+
+<div class="container" id="revelation">
+
+    <div class="logo">⚠️</div>
+
+    <div class="warning">
+        SIMULATION DE PHISHING
+    </div>
+
+    <p>
+        Vous venez de participer à une campagne
+        de sensibilisation à la cybersécurité.
+    </p>
+
+    <p>
+        Le message semblait vous offrir
+        <strong>100 000 FCFA</strong>, mais il s'agissait
+        d'une fausse récompense.
+    </p>
+
+    <h3>🚨 Ce qu'un véritable pirate pourrait chercher</h3>
+
+    <div class="details">
+        🔑 Mot de passe<br><br>
+        💳 Informations bancaires<br><br>
+        📱 Code OTP<br><br>
+        👤 Informations personnelles<br><br>
+        💰 Accès à votre argent
+    </div>
+
+    <p>
+        Avec des informations bancaires volées,
+        une victime peut subir des pertes importantes,
+        potentiellement supérieures à <strong>100 000 FCFA</strong>.
+    </p>
+
+    <h3>📋 Détails de la simulation</h3>
+
+    <div class="details">
+        <strong>Heure du clic :</strong>
+        <span id="heure"></span><br><br>
+
+        <strong>Lien :</strong>
+        simulation-phishing<br><br>
+
+        <strong>Participant :</strong>
+        Participant anonyme<br><br>
+
+        <strong>Données personnelles récupérées :</strong>
+        Aucune
+    </div>
+
+    <h3>🛡️ Comment éviter le piège ?</h3>
+
+    <p>
+        Ne cliquez pas immédiatement sur un lien qui promet
+        de l'argent ou une récompense.
+        Vérifiez l'expéditeur, l'adresse du site et demandez-vous
+        pourquoi vous recevez cette offre.
+    </p>
+
+    <button onclick="location.reload()">
+        🔄 Revoir la simulation
+    </button>
+
+    <div class="footer">
+        Créateur : <strong>Moné</strong><br>
+        Collaboration avec <strong>Artisans du Code</strong>
+    </div>
+
+</div>
+
+
+<script>
+
+function reveler() {
+
+    const maintenant = new Date();
+
+    const heure =
+        maintenant.toLocaleTimeString("fr-FR");
+
+    document.getElementById("heure").textContent = heure;
+
+    document.getElementById("accueil").style.display = "none";
+
+    document.getElementById("revelation").style.display = "block";
+}
+
+</script>
+
+</body>
+</html>
